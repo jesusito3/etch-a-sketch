@@ -1,19 +1,20 @@
 const container = document.querySelector('#container');
 
-{
-for(let row = 0; row < 16; row++) {
-    for(let column = 0; column < 16; column++) {
-        const cell = document.createElement('div');
-        cell.classList.add('cell');
-        container.appendChild(cell);
+function createGrid(number) {
+    for(let row = 0; row < number; row++) {
+        for(let column = 0; column < number; column++) {
+            const cell = document.createElement('div');
+            cell.classList.add('cell');
+            container.appendChild(cell);
+        }
     }
 }
-}
+createGrid(16);
 
-const squares = document.querySelector('.cell');
+const squares = document.getElementsByClassName('cell');
 
-for (i in squares) {
-    squares[i].addEventListener('mouseover', () => {
-        squares[i].style.cssText = "background-color: blue;";
-    });
+for (let i = 0; i < squares.length; i++) {
+    squares[i].onmouseover = function () {
+        squares[i].style.cssText = "background-color: blue";
+    };
 }

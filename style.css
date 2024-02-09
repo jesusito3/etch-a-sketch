@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+#button {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
 #container {
     display: flex;
     flex-wrap: wrap;
