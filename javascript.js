@@ -18,3 +18,20 @@ for (let i = 0; i < squares.length; i++) {
         squares[i].style.cssText = "background-color: blue";
     };
 }
+
+let btn = document.querySelector('button');
+
+
+
+btn,addEventListener('click', () => {
+    let gridSize = prompt("Desired number of squares per side?");
+    if (gridSize > 100) {
+        alert("Please enter a number no greater than 100");
+    }
+    else {
+        while (container.firstChild) {
+            container.removeChild(container.firstChild);
+        }
+        createGrid(gridSize);
+    }
+});
