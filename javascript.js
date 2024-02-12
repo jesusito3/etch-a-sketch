@@ -6,24 +6,17 @@ function createGrid(number) {
             const cell = document.createElement('div');
             cell.classList.add('cell');
             container.appendChild(cell);
+            cell.style.width = 960 / number + "px";
+            cell.style.height = 960 / number + "px";
         }
     }
 }
+
 createGrid(16);
-
-const squares = document.getElementsByClassName('cell');
-
-for (let i = 0; i < squares.length; i++) {
-    squares[i].onmouseover = function () {
-        squares[i].style.cssText = "background-color: blue";
-    };
-}
 
 let btn = document.querySelector('button');
 
-
-
-btn,addEventListener('click', () => {
+btn.addEventListener('click', () => {
     let gridSize = prompt("Desired number of squares per side?");
     if (gridSize > 100) {
         alert("Please enter a number no greater than 100");
@@ -35,3 +28,11 @@ btn,addEventListener('click', () => {
         createGrid(gridSize);
     }
 });
+
+const squares = document.getElementsByClassName('cell');
+
+for (let i = 0; i < squares.length; i++) {
+    squares[i].onmouseover = function () {
+        squares[i].style.backgroundColor = "blue";
+    };
+}
