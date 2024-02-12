@@ -11,8 +11,15 @@ function createGrid(number) {
         }
     }
 }
-
 createGrid(16);
+
+const squares = document.getElementsByClassName('cell');
+
+for (let i = 0; i < squares.length; i++) {
+    squares[i].onmouseover = function () {
+        squares[i].style.backgroundColor = "blue";
+    };
+}
 
 let btn = document.querySelector('button');
 
@@ -26,13 +33,11 @@ btn.addEventListener('click', () => {
             container.removeChild(container.firstChild);
         }
         createGrid(gridSize);
+        for (let i = 0; i < squares.length; i++) {
+            squares[i].onmouseover = function () {
+                squares[i].style.backgroundColor = "blue";
+            };
+        }
     }
 });
 
-const squares = document.getElementsByClassName('cell');
-
-for (let i = 0; i < squares.length; i++) {
-    squares[i].onmouseover = function () {
-        squares[i].style.backgroundColor = "blue";
-    };
-}
